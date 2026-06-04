@@ -1,0 +1,4 @@
+interface:
+  display_name: "Iterative Implementation Review Auto"
+  short_description: "Auto implementation, review, and repair loop"
+  default_prompt: "Use $iterative-implementation-review-auto to implement this with auto dispatch, auto review, repair loops, and final validation."
