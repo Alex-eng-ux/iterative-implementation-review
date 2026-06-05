@@ -16,6 +16,19 @@ Each skill is self-contained and can be installed independently.
 
 The subject matter is the same in both versions. The difference is the execution model: manual or mixed orchestration versus auto-first orchestration.
 
+## Workflow Generations
+
+This repository is the workflow-layer bridge between the earlier skill families and the final integrated suite.
+
+1. Generation 1: the manual workflow stack
+   `iterative-implementation-review` works with `parallel-decomposer-skill`, `code-analyzer-suite`, and `grill-me`
+2. Generation 2: the auto-capable workflow stack
+   `iterative-implementation-review-auto` works with `parallel-decomposer-auto`, `code-analyzer-auto`, and `grill-me`
+3. Final integrated distribution
+   `implementation-workflows`, which packages both generations and adds `landable-implementation-loop` as the user-facing entry point
+
+This is why the repository still matters even after the integrated suite exists: it defines the workflow logic that the other skill families plug into.
+
 ## Position In The Workflow
 
 This repository is the workflow layer, not the decomposition or analysis layer.
