@@ -7,6 +7,15 @@ This repository contains two related Codex skills:
 
 Each skill is self-contained and can be installed independently.
 
+## Which Version Should You Use?
+
+| Variant | Use it when | Avoid it when |
+| --- | --- | --- |
+| `iterative-implementation-review` | You want a standard or mixed workflow, visible prompts, or manual control over decomposition and review steps | Your runtime can already dispatch sub-agents automatically and you want the loop to lean into that |
+| `iterative-implementation-review-auto` | Your runtime can orchestrate workers or sub-agents and you want an auto-first repair/review loop | You need the workflow to stay explicit, copy-pasteable, or compatible with older environments |
+
+The subject matter is the same in both versions. The difference is the execution model: manual or mixed orchestration versus auto-first orchestration.
+
 ## Position In The Workflow
 
 This repository is the workflow layer, not the decomposition or analysis layer.
@@ -36,3 +45,11 @@ Think of the three repositories like this:
 3. `iterative-implementation-review`: how to keep looping until the implementation survives review
 
 This repository is the oldest workflow layer in that stack, and it remains useful because it gives the other two repos a repeatable operating model.
+
+## Repository Roles At A Glance
+
+| Repository | Primary job | Typical output |
+| --- | --- | --- |
+| `parallel-decomposer-skill` | split work safely | task cards or worker specs |
+| `code-analyzer-suite` | review changed code | findings and severity-ranked risks |
+| `iterative-implementation-review` | keep looping until the implementation survives review | repaired implementation plus verification status |
